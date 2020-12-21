@@ -59,7 +59,6 @@ public class AATree {
             return current;
     }
 
-    /** Function split **/
     private AANode split(AANode current)
     {
         if (current == null)
