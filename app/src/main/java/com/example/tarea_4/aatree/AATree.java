@@ -31,9 +31,9 @@ public class AATree {
     {
         if (current == null)
             current = new AANode(n, null, null);
-        else if ( n > current.key)
+        else if ( n > current.value)
             current.right = insert(n, current.right);
-        else if ( n < current.key)
+        else if ( n < current.value)
             current.left = insert(n, current.left);
         else
             return current;
@@ -76,6 +76,21 @@ public class AATree {
         }
         else
             return current;
+    }
+
+    public void preorden()
+    {
+        preorden(root);
+    }
+    private void preorden(AANode current)
+    {
+        if (current == null){
+            return;
+        }
+
+        System.out.print(current.value +" ");
+        preorden(current.left);
+        preorden(current.right);
     }
 
 }
